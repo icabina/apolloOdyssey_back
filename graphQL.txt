@@ -1,0 +1,69 @@
+=======================================
+SCHEMA
+- A schema is like a contract between the server and the client. 
+- It defines what a GraphQL API can and can't do, and how clients can request or change data.
+- It's an abstraction layer that provides flexibility to consumers while hiding back-end implementation details.
+- SDL Schema Definition Language.
+- Define types and fields
+=======================================
+TYPES
+- contain fields
+=======================================
+FIELDS
+- int, float, string, boolean, ID, object
+- ! to make field non-nullable
+=======================================
+GRAPHQL QUERY
+- browser to GraphQL server
+- Server: Parse, Build AST (abstract syntax tree)
+- Validate: (Errors if cant validate schema)
+- Resolve (resolvers)
+- Result (JSON)
+=======================================
+TYPE QUERY
+- The fields of this type are entry points into the rest of our schema. 
+- Our client can query for.
+=======================================
+DESCRIPTIONS
+- "lorem ipsum"
+=======================================
+GRAPHQL SERVER
+- return populated schema fields as a response
+- receiving incoming graphql queries
+- validating graphql queries against our schema
+=======================================
+MOCKS
+- configure custom mocks responses for every field
+- enable default mock responses for every field
+=======================================
+RESOLVERS
+- function with 4 parameters
+- parent: returned value from previous resolver in chain
+- args: is an object that contains all GraphQL arguments that were provided for the field by the GraphQL operation
+- context: context for all resolvers (state, DB state, like authentication information, a database connection, RESTDataSource) 
+- info: contains information about the operation's execution state, like cache policies at resolver level
+- names must match name in schema
+- Query, Mutation, Subscription need own key in resolver
+=======================================
+APOLLO RESTDataSource
+- class for handling REST calls from graphQL
+- efficiently handle resource caching and deduplication for our REST API calls.
+- npm install apollo-datasource-rest
+=======================================
+DATASOURCES
+- Configuring the dataSources option for our ApolloServer will make our RestDataSource API available to all resolvers from their context parameter.
+=======================================
+GRAPHQL_VALIDATION_FAILED
+- error code means the GraphQL operation is not valid against the server's schema. 
+=======================================
+MUTATIONS
+- write functions
+- useMutation(mutation, variables{})
+=======================================
+HOOKS
+- use hooks to send requests to our GraphQL API from a React client.
+- to send mutation, we use the useMutation hook. This returns an array, where the first element is the mutate function used to trigger the mutation.
+- the second element is an object with more information about mutation, such as loading, error and data. This hook takes in a GraphQL operation as the first parameter. 
+- It also takes in an options object as the second
+parameter, where properties like variables are set.
+=======================================
