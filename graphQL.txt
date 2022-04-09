@@ -79,3 +79,14 @@ INTROSPECTION
 - Tools like Apollo Sandbox use introspection to build and run queries.
 - instrospection in prod. can be used maliciously
 - apollo server turns off introspection in prod
+=======================================
+FIELD DEPRECATION
+- add new field to schema
+- mark old fied as deprecated
+- monitor old field usage
+- remove old field once no clients use it
+=======================================
+SCHEMA DIRECTIVE
+- starts with @
+- after fields or types
+- @deprectaed (reason: "") //reason argument
