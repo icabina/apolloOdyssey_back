@@ -67,3 +67,15 @@ HOOKS
 - It also takes in an options object as the second
 parameter, where properties like variables are set.
 =======================================
+SCHEMA REGISTRY
+- version control system for our schema. It stores our schema's change history,
+- avoiding breaking changes in federated graphs
+- querying a production graph without relying on instrospection
+- tracking variants of the same graph in different environments
+=======================================
+INTROSPECTION
+- is a GraphQL feature that enables us to query a GraphQL server for information about the underlying schema. 
+- includes data like types, fields, and field-level descriptions. 
+- Tools like Apollo Sandbox use introspection to build and run queries.
+- instrospection in prod. can be used maliciously
+- apollo server turns off introspection in prod
