@@ -34,6 +34,8 @@ const resolvers = {
       }
     },
   },
+  //gets authorId from parent (incrementTrackViews)
+
   Track: {
     author: ({ authorId }, _, { dataSources }) => {
       return dataSources.trackAPI.getAuthor(authorId);
