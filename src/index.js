@@ -1,6 +1,7 @@
 //TODO
 //npm install apollo-server graphql
 // npm install apollo-datasource-rest
+require("dotenv").config();
 const { ApolloServer } = require("apollo-server");
 const typeDefs = require("./schema");
 const resolvers = require("./resolvers");
